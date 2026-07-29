@@ -1,23 +1,28 @@
 # sysinfo-tool
 
-A simple command-line tool for viewing systemd journal logs with filtering capabilities.
+A simple command-line tool for viewing system information including journal logs, system resources, and hardware details.
 
 ## Description
 
-sysinfo-tool provides an interactive menu interface for querying systemd journal logs. It allows users to filter logs by boot number and priority level, making it easier to troubleshoot system issues across different boot sessions.
+sysinfo-tool provides an interactive menu interface for querying various system information. It allows users to view journal logs, RAM usage, system uptime, locale settings, hostname, kernel version, current user, and block device information.
 
 ## Features
 
 - Interactive menu-based interface
-- Filter journal logs by boot number (0-10)
-- Filter logs by priority level (0-7)
+- View systemd journal logs with filtering by boot number and priority level
+- Display RAM usage information
+- Show system uptime
+- View locale settings
+- Display hostname
+- Show kernel version
+- Display current user
+- List block devices
 - Simple and intuitive command-line usage
 
 ## Requirements
 
 - Python 3.x
-- systemd (for `journalctl` command)
-- Linux operating system with systemd init system
+- Linux operating system
 
 ## Installation
 
@@ -87,9 +92,18 @@ This will display error-level and higher priority logs from the current boot.
 
 ## How It Works
 
-The tool uses the `journalctl` command with the following flags:
-- `-b`: Specifies the boot number
-- `-p`: Sets the priority level filter
+The tool uses the following system commands:
+
+- `journalctl`: View systemd journal logs
+  - `-b`: Specifies the boot number
+  - `-p`: Sets the priority level filter
+- `free`: Display RAM usage (`-h` for human-readable format)
+- `uptime`: Show system uptime
+- `locale`: Display locale settings
+- `hostname`: Show system hostname
+- `uname`: Display kernel information (`-r` for kernel release)
+- `whoami`: Show current user
+- `lsblk`: List block devices (`-f` for filesystem information)
 
 ## License
 
