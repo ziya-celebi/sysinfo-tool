@@ -5,11 +5,15 @@ def journal():
     priority_choice= input('Enter log priority level between 0-7\n 0: Highest priority\n7: Lowest priority\n')
     subprocess.run(['journalctl', '-b', f'-{boot_choice}', '-p', f'{priority_choice}'])
 
-while True:
+def main_loop():
     menu_choice= input('1: journal-tool\n2: exit\n')
     if menu_choice=='1':
         journal()
     elif menu_choice=='2':
-        break
+        return False
     else:
         print('invalid')
+
+while True:
+    if main_loop()== False:
+        break
