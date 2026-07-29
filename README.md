@@ -46,8 +46,15 @@ python3 main.py
 Once the tool is running, you'll see the following menu:
 
 ```
-1: journal-tool
-2: exit
+1: journal
+2: ram info
+3: uptime
+4: locale
+5: hostname
+6: kernel
+7: whoami
+8: lsblk
+9: exit
 ```
 
 ### Journal Tool Options
@@ -74,8 +81,15 @@ When you select option 1, you'll be prompted for:
 ```
 $ python3 main.py
 
-1: journal-tool
-2: exit
+1: journal
+2: ram info
+3: uptime
+4: locale
+5: hostname
+6: kernel
+7: whoami
+8: lsblk
+9: exit
 1
 Enter a boot number between 0-10
 0: current boot
