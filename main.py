@@ -26,7 +26,11 @@ def whoami_info():
 def lsblk_info():
     subprocess.run(['lsblk', '-f'])
 
+def clear():
+    subprocess.run(['clear'])
+
 def main_loop():
+    clear()
     menu_choice= input('\n1: journal\n2: ram info\n3: uptime\n4: locale\n5: hostname\n6: kernel\n7: whoami\n8: lsblk\n9: exit\n')
     if menu_choice=='1':
         journal_info()
@@ -49,6 +53,8 @@ def main_loop():
     else:
         print('invalid')
 
+    input('press enter to return to menu')
+    
 while True:
     if main_loop()== False:
         break
